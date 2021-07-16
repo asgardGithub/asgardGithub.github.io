@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Papelitos 1.0</title>
+	<link rel="stylesheet" type="text/css" href="../css/playCSS.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers">
+</head>
+<body>
+
+<br>
+	<p id="creditos">by Richieri</p>
+<br>
+
+<div id="tablero">
+
+	<div id="scoreAzul">
+		<p id="azul">Equipo Azul</p>
+		<p id="puntAz">#A</p>
+		<button id="comAzu" onclick="countdown()">Comenzar turno</button>
+	</div>
+	<div id="boxEtapa">
+		<p id="etapa">Etapa en juego : + "modo de juego"</p>
+	</div>
+	<div id="scoreRojo">
+		<p id="rojo">Equipo Rojo</p>
+		<p id="puntRo">#R</p>
+		<button id="comRoj" onclick="countdown()">Comenzar turno</button>
+	</div>
+	<div id="personaje">
+		<p>personaje</p>
+	</div>
+	<div id="papelBox">
+		<p id="papel">. . . . .</p>
+	</div>
+	
+	<div id="botYtime">
+		<button class="boton" id="acierto" onclick="oks()"></button>
+		<p id="counter">60</p>
+		<button id="finTime" onclick="endTime()">Terminar turno</button>
+		<button class="boton" id="pasar" onclick="pass()"></button>
+		<p id="goles">0</p>
+		<p id="papls">#</p>
+	</div>
+
+</div>
+
+
+</div>
+
+<br/><br/>
+
+<p id="arreglo">debug</p>
+<p id="win">ganador: equipo rojo</p>
+
+<br/><br/><br/><br/>
+	
+</body>
+<footer>
+	<script src="../js/playJS.js"></script>
+</footer>
+</html>

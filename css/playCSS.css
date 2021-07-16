@@ -1,0 +1,190 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: -webkit-linear-gradient(#14141f,#33334d);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+p {
+	font-family: 'Bangers', cursive;
+	font-size: 24px;	
+	color: white;
+	text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+}
+
+#creditos, #arreglo {
+	text-align: center;
+	width: 100%;
+}
+
+#tablero {
+	position: relative;
+	left: 2%;
+	background: black;
+	width: 96%;
+	height: 590px;
+	display: grid;
+	grid-template-columns: 2fr 8fr;
+	grid-template-rows: repeat(6, 1fr);
+	grid-gap: 10px;
+	grid-template-areas: 
+		"scoRo etap"
+		"scoRo per"
+		"scoRo pap"
+		"scoAz pap"
+		"scoAz bot"
+		"scoAz bot";
+}
+
+#scoreAzul {
+	background-image: -webkit-linear-gradient(#0000cc,#00004d);
+	grid-area: scoAz;
+	display: grid;
+	grid-template-columns: 3fr;
+}
+
+#scoreRojo {
+	background-image: -webkit-linear-gradient(#cc0000,#4d0000);
+	grid-area: scoRo;
+	display: grid;
+	grid-template-columns: 3fr;
+}
+
+#rojo, #azul {
+	text-align: center;
+	margin: auto;
+	font-size: 55px; 
+}
+
+#puntRo, #puntAz {
+	text-align: center;
+	font-size: 100px;
+	margin: auto;
+}
+
+#boxEtapa {
+	text-align: center;
+	padding: 10px;
+	grid-area: etap;
+}
+
+#etapa{
+font-size: 60px;
+}
+
+#personaje {
+	text-align: center;
+	grid-area: per;
+	padding: 28px;
+}
+
+#papelBox {
+	grid-area: pap;
+	background: rgb(179, 204, 204);
+	border-radius: 20px;	
+}
+
+#papel {
+	text-align: center;
+	font-size: 75px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#botYtime {
+	grid-area: bot;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 10px;
+	grid-template-areas: 
+		"botOk time botPas"
+		"botOk time botPas"
+		"goles fin papls";
+	position: relative;
+}
+
+#acierto {
+	background-image: url(../images/aciert.png);
+	grid-area: botOk;
+}
+
+#counter {
+	text-align: center;
+	position: relative;
+	margin: auto;
+	font-size: 100px;
+	grid-area: time;
+}
+
+#pasar {
+	background-image: url(../images/bo.png);
+	grid-area: botPas;
+}
+
+.boton {
+	display: block;
+	background-color: black;
+	margin: auto;
+	position: relative;
+	background-position: center;
+	width: 135px;
+	height: 135px;
+	background-size: 130px 130px;
+	border-color: black;	
+}
+
+#goles {
+	grid-area: goles;
+	text-align: center;
+	margin: auto;
+	position: relative;
+	top: 5%;
+	font-size: 30px;
+}
+
+#papls {
+	grid-area: papls;
+	text-align: center;
+	position: relative;
+	margin: auto;
+	top: 5%;
+	font-size: 30px;
+}
+
+#comRoj, #comAzu {
+	border-radius: 20px;
+	border: 5px solid black;
+	width: 250px;
+	height: 70px;
+	font-family: 'Bangers', cursive;
+	font-size: 35px;
+	margin: auto;
+	position: relative;
+}
+
+#finTime {
+	border-radius: 20px;
+	border: 5px solid black;
+	width: 250px;
+	height: 70px;
+	background-color: red;
+	font-family: 'Bangers', cursive;
+	font-size: 35px;
+	margin: auto;
+	position: relative;
+	grid-area: : fin;
+}
+
+#win {
+	text-align: center;
+	width: 100%;
+	top: 50%;
+	font-size: 140px;
+	padding-top: 61px;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Papelitos 1.0</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/tryCSS.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers">
+</head>
+<body>
+
+<!-- M E N U -->
+
+<div id="menu"> 
+	<a href="#" onclick="return false;" onmousedown="autoScrollTo('divHome');"><p class="ValignMenu">papelitos 1.0</p></a>
+	<a href="#" onclick="return false;" onmousedown="autoScrollTo('divReglas');"><p class="ValignMenu">reglas</p></a>
+	<a href="#" onclick="return false;" onmousedown="autoScrollTo('divArreglo');"><p class="ValignMenu">personajes</p></a>
+	<a href="#" onclick="return false;" onmousedown="autoScrollTo('divEquipo');"><p class="ValignMenu">equipos</p></a>
+	<a href="#" onclick="return false;" onmousedown="autoScrollTo('divJugar');"><p class="ValignMenu">jugar</p></a>
+</div>
+
+<!-- H O M E  -->
+
+<div id="divHome">
+	<br><br><br><br><br>
+	<h1>Papelitos 1.0</h1>
+	<br><br>
+	<img id="logoHome" src="../images/bowl.png">
+	<br><br>
+	<p id="creditos">R i c h i e r i</p>
+	<br><br><br><br>
+</div>
+
+<!-- R E G L A S -->
+
+<div id="divReglas">
+	<br><br><br><br>
+	<h1>reglas</h1>
+	<br><br>
+	<ul>
+		<li>Los jugadores ingresan personajes, ficticios o no, en lo posible conocidos por el resto para mantener la diversion en el juego.</li>
+		<br>
+ 		<li>Se forman dos equipos.</li>
+ 		<br>
+ 		<li>La partida se divide en 3 ettapas:</li>
+ 		<br>
+ 		<li class="separado">1 °  -  Vale decir cualquier palabra que no este escrita en el papelito. (Tabu)</li>
+ 		<br>
+ 		<li class="separado">2 °  -  Solamente vale decir una palabra que no este en el papelito.</li>
+ 		<br>
+ 		<li class="separado">3 °  -  Actuando sin hablar. (Mimicas)</li>
+ 		<br>
+ 		<li>Cada equipo tiene un turno de 60 segundos para adivinar la mayor cantidad de personajes posibles.</li>
+ 		<br>
+ 		<li>Cada papelito adivinado vale un punto y a la hora de pasar de papelito se restan automaticamente 3 segundos al reloj.</li>
+ 		<br>
+		<li>La etapa se termina cuando no quedan mas papelitos en el frasco.</li>
+		<br>
+		<li>Gana el juego el equipo con el puntaje mas alto al final de las 3 etapas.</li>
+		<br>
+	</ul>
+	<br><br><br><br><br>
+</div>
+
+<!-- A R R E G L O -->
+
+<div id="divArreglo">
+	<br><br><br><br>
+	<h1>Agrega tus personajes</h1>
+	<br><br><br>
+	<input type="text" id="personaje"> 
+	<br><br><br>
+	<input id="botonchico" type="button" onClick="addPapel()" value="Agregar">
+	<br><br>
+	<div id="PapCounter">
+	<br><br>
+	<img id="bowlChico" src="../images/bowl.png">
+	<br><br>
+	<p id="cantiPap">0</p> 
+	</div>
+	<p id="arre">$</p>
+</div>
+
+<!-- E Q U I P O S -->
+
+<div id="divEquipo">
+	<br><br><br><br>
+	<h1>ASIGNADOR DE EQUIPOS</h1>
+	<br><br><br>
+	<input id="botonEquipo" type="button" onClick="equipoRand()" value="presioname">
+	<br><br>
+	<img id="bowlChico2" src="../images/bowl.png">
+</div>
+
+<!-- J U G A R -->
+
+<div id="divJugar">
+	<br><br><br><br><br>
+	<div id="tablero">
+		<div id="scoreAzul">
+			<p id="azul">Equipo Azul</p>
+			<p id="puntAz">#A</p>
+			<button id="comAzu" onclick="countdown()">Comenzar turno</button>
+		</div>
+		<div id="boxEtapa">
+			<p id="etapa">Etapa en juego : + "modo de juego"</p>
+		</div>
+		<div id="scoreRojo">
+			<p id="rojo">Equipo Rojo</p>
+			<p id="puntRo">#R</p>
+			<button id="comRoj" onclick="countdown()">Comenzar turno</button>
+		</div>
+		<div id="titPerje">
+			<p>personaje</p>
+		</div>
+		<div id="papelBox">
+			<p id="papel">. . . . .</p>
+		</div>
+		<div id="botYtime">
+			<button class="boton" id="acierto" onmousedown="acier.play()" onclick="oks()"></button>
+			<p id="counter">60</p>
+			<button id="finTime" onclick="endTime()">Terminar turno</button>
+			<button class="boton" id="pasar" onmousedown="rand.play()" onclick="pass()"></button>
+			<p id="goles">0</p>
+			<p id="papls">#</p>
+		</div>
+	</div>
+</div>
+
+<!-- F I N A L -->
+
+<br><br><br><br><br><br><br><br>
+
+<div id="divEnd">
+<p id="win">ganador: equipo rojo</p>
+
+<p id="arreglo">debug</p>	
+
+<div id="gameEnd">
+<div id="scoreAzul2">
+	<p id="azul">Equipo Azul</p>
+	<p id="puntAz2">#A</p>
+</div>
+<div>
+	<img src="../images/snoop.gif" id="snoop">
+</div>
+<div id="scoreRojo2">
+	<p id="rojo">Equipo Rojo</p>
+	<p id="puntRo2">#R</p>
+</div>
+</div>
+<br>
+<button id="reload" onclick="newGame()" >Nuevo Juego</button>
+
+<br><br><br><br>
+</div>
+
+</body>
+<footer>
+	<script src="../js/tryJS.js"></script>
+</footer>
+</html>
+
+
