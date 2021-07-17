@@ -4,9 +4,10 @@
 }
 
 body {
-	background-image: -webkit-linear-gradient(#14141f,#33334d);
+	background-image: url("../images/logo.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 p {
